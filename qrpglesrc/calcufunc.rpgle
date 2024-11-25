@@ -19,6 +19,8 @@ dow not salir;
       suma(op1:op2:result);
     when-is '-';
       result = resta(op1:op2);
+    when-is '*';
+      multiplica(op1:op2:result);
   endsl;
 
   resulta = %char(op1) + ' ' + op + ' ' + %char(op2) + ' = ' + %char(result);
@@ -46,3 +48,13 @@ dcl-proc resta export;
 
   return n1 - n2;
 end-proc; 
+
+dcl-proc multiplica export;
+  dcl-pi *n;
+    n1     packed(5);
+    n2     packed(5);
+    result packed(6);
+  end-pi;
+
+  result = n1 * n2;
+end-proc;
